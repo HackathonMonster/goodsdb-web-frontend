@@ -1,5 +1,10 @@
 .masonry-brick
-  .row
-    img(ng-src="{{item.pictures[0].imageUrl}}" width="200" height="200")
-  .row
-    h4.text-center {{item.name}}
+  .brick-container
+    header.row
+      h3.text-center {{item.name}}
+    .row
+      img(ng-src="{{item.pictures[0].imageUrl}}" width="200" height="200")
+    .row.tags
+      div.tag(ng-repeat="tag in item.tags" ng-click="filter(tag.name)")
+        i.fa.fa-tag &nbsp;
+        | {{tag.name}}

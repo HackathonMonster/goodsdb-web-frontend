@@ -16,9 +16,9 @@ block content
           li(ng-class="{active: $state.includes('dashboard.top')}")
             a(ui-sref="dashboard.top") トップ
 
-        form.navbar-form.navbar-left(role="search" ng-submit="filter()")
+        form.navbar-form.navbar-left(role="search" ng-submit="filter($event)" need-signin="hide")
           div.form-group
-            input.form-control(type="text" placeholder="Search" ng-model="search")
+            input.form-control(type="text" name="search" placeholder="Search" ng-model="search" ng-focus="clear()" ng-blur="restore()")
 
         ul.nav.navbar-nav.navbar-right(need-signin="hide")
           li
