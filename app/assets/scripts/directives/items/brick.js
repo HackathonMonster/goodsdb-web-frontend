@@ -1,6 +1,6 @@
 var itemBrickController = function ($scope) {
   $scope.filter = function (tag) {
-    $scope.$emit('filter', tag);
+    $scope.$emit('filter', {tags: tag});
   };
 };
 

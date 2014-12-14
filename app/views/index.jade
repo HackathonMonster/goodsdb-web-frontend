@@ -18,7 +18,12 @@ block content
 
         form.navbar-form.navbar-left(role="search" ng-submit="filter($event)" need-signin="hide")
           div.form-group
-            input.form-control(type="text" name="search" placeholder="Search" ng-model="search" ng-focus="clear()" ng-blur="restore()")
+            input.form-control(type="text" name="search" placeholder="Search" ng-model="query.tags" ng-focus="clear()" ng-blur="restore()")
+          div.form-group.item-types
+            select.form-control(ng-model="query.type" ng-change="filter($event,  '')")
+              option(value="any") すべて
+              option(value="lost") 落し物
+              option(value="found") 拾い物
 
         ul.nav.navbar-nav.navbar-right(need-signin="hide")
           li
