@@ -1,4 +1,7 @@
 var itemBrickController = function ($scope) {
+  try {
+    $scope.url = $scope.item.pictures[0].imageInfo.candidates[0].sites[0].url;
+  } catch (e) {}
   $scope.filter = function (tag) {
     $scope.$emit('filter', {tags: tag});
   };

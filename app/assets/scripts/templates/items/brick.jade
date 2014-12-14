@@ -8,3 +8,6 @@
       div.tag(ng-repeat="tag in item.tags" ng-click="filter(tag.name)")
         i.fa.fa-tag &nbsp;
         | {{tag.name}}
+
+    .row
+      a(ng-href="{{url}}" target="_blank") 購入する
