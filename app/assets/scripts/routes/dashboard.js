@@ -26,7 +26,7 @@ module.exports = function ($stateProvider) {
     template: require('../templates/dashboard/top.jade'),
     resolve: {
       items: ['itemManager', function (itemManager) {
-        return itemManager.index();
+        return itemManager.search();
       }]
     }
   });

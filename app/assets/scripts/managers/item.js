@@ -20,6 +20,7 @@ var userManagerProvider = function (BaseManager, Item) {
 
     search: function (query) {
       query = _.clone(query) || {};
+      query.all_users = true;
       query['tags[]'] = query.tags;
       delete query.tags;
       var key = this.getCacheKey('search', JSON.stringify(query));
