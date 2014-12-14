@@ -9,7 +9,8 @@ module.exports = {
     alias: {
       angular: path.join(root, 'app', 'assets', 'scripts', 'shims', 'angular'),
       lodash: path.join(root, '.components', 'lodash', 'dist', 'lodash'),
-      moment: path.join(root, '.components', 'moment', 'moment.js')
+      moment: path.join(root, '.components', 'moment', 'moment.js'),
+      jquery: path.join(root, '.components', 'jquery', 'dist', 'jquery.js')
     }
   },
 

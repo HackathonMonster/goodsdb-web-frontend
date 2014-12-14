@@ -3,9 +3,9 @@ module.exports = function ($stateProvider) {
   .state('dashboard', {
     abstract: true,
     url: '/',
-    template: require('../templates/index.jade'),
+    template: '<div ui-view></div>',
     resolve: {
-      company: ['$q', '$rootScope', '$state', 'userManager', function ($q, $rootScope, $state, userManager) {
+      user: ['$q', '$rootScope', '$state', 'userManager', function ($q, $rootScope, $state, userManager) {
         if ($rootScope.currentUser) {
           return $rootScope.currentUser;
         }
@@ -23,6 +23,11 @@ module.exports = function ($stateProvider) {
   .state('dashboard.top', {
     url: '',
     controller: 'DashboardTopCtrl',
-    template: require('../templates/dashboard/top.jade')
+    template: require('../templates/dashboard/top.jade'),
+    resolve: {
+      items: ['itemManager', function (itemManager) {
+        return itemManager.index();
+      }]
+    }
   });
 };

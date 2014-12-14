@@ -1,6 +1,7 @@
-function DashboardTopCtrl($scope) {
+function DashboardTopCtrl($scope, items) {
+  $scope.items = items;
 }
 
 angular.module('goodsDbApp').controller('DashboardTopCtrl', [
-  '$scope', DashboardTopCtrl
+  '$scope', 'items', DashboardTopCtrl
 ]);
