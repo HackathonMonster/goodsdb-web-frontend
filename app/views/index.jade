@@ -9,12 +9,12 @@ block content
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand Trunk
+        a.navbar-brand(href="javascript:void(0)" ng-click="filter($event, '')") Trunk
 
       #main-navbar.collapse.navbar-collapse
         ul.nav.navbar-nav(need-signin="hide")
           li(ng-class="{active: $state.includes('dashboard.top')}")
-            a(ui-sref="dashboard.top") トップ
+            a(ui-sref="dashboard.top" ng-click="filter($event, '')") トップ
 
         form.navbar-form.navbar-left(role="search" ng-submit="filter($event)" need-signin="hide")
           div.form-group

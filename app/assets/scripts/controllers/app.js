@@ -2,9 +2,11 @@ function AppCtrl($scope, $state, userManager) {
   $scope.search = '';
   $scope.previousSearch = '';
 
-  $scope.filter = function ($event) {
-    $event.target.search.blur();
-    $scope.$broadcast('filter', $scope.search);
+  $scope.filter = function ($event, text) {
+    if ($event.target && $event.target.search) {
+      $event.target.search.blur();
+    }
+    $scope.$broadcast('filter', _.isUndefined(text) ? $scope.search : text);
   };
 
   $scope.$on('filter', function (e, tag) {
