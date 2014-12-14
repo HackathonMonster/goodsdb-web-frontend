@@ -16,6 +16,10 @@ block content
           li(ng-class="{active: $state.includes('dashboard.top')}")
             a(ui-sref="dashboard.top") トップ
 
+        form.navbar-form.navbar-left(role="search" ng-submit="filter()")
+          div.form-group
+            input.form-control(type="text" placeholder="Search" ng-model="search")
+
         ul.nav.navbar-nav.navbar-right(need-signin="hide")
           li
             a(href="javascript:void(0)" ng-click="logout()") ログアウト
