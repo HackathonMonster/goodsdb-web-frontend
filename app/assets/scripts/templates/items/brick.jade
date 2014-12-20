@@ -1,7 +1,7 @@
 .masonry-brick
   .brick-container
     header.row
-      h3.text-center {{item.name}}
+      h4.text-center {{item.name}}
     .row
       img(ng-src="{{item.pictures[0].imageUrl}}" width="200" height="200")
     .row.tags
@@ -9,5 +9,5 @@
         i.fa.fa-tag &nbsp;
         | {{tag.name}}
 
-    .row
-      a(ng-href="{{url}}" target="_blank") 購入する
+    .row.text-center
+      a.buy.btn.btn-default.btn-link(ng-href="{{url}}" target="_blank") 購入する
